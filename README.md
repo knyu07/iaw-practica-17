@@ -13,7 +13,7 @@ Para el archivo docker-compose.yml necesitaremos:
 
 ### Balanceo de carga (HAProxy)
 
-Utilizaremos la imagen dockercloud/haproxy de DockerHub, añadiremos los puertos 80 y 1936 que nos permite acceder a una página con información del balanceo.
+Utilizaremos la imagen dockercloud/haproxy de DockerHub, añadiremos los puertos 80 y 1936 (abrir puertos en AWS) que nos permite acceder a una página con información del balanceo.
 Creamos un enlace con el servicio que queremos balancear. Los enlaces permiten que los contenedores se descubran entre sí y transfieran de manera segura información sobre un contenedor a otro contenedor y para finalizar montaremos el socket UNIX del Docker daemon (/var/run/docker.sock) para que el contenedor lb pueda comunicarse con el Docker daemon y obtener información del resto de contenedores.
 
 ```
